@@ -1,7 +1,7 @@
 ﻿#include<stdio.h>
 #include<string.h>
 #include "getline.h"
-#include "printfmacro.h"
+#define ps(x)      printf("%s = %s\n", #x, x);
 
 struct lines{
     char stack_lines1[100];
