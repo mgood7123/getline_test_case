@@ -57,10 +57,10 @@ typedef long ssize_t;
 bool getdelim_include_delimiter = false;
 bool getline_include_delimiter = false;
 
-size_t __getdelim_default_grow_by_allocation = 1;
-size_t __getline_default_grow_by_allocation = 1;
-size_t __getdelim_default_minimum_allocation = 1;
-size_t __getline_default_minimum_allocation = 1;
+#define __getdelim_default_grow_by_allocation 1;
+#define __getline_default_grow_by_allocation 1;
+#define __getdelim_default_minimum_allocation 1;
+#define __getline_default_minimum_allocation 1;
 
 size_t getdelim_grow_by_allocation = __getdelim_default_grow_by_allocation;
 size_t getline_grow_by_allocation = __getline_default_grow_by_allocation;
