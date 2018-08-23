@@ -42,8 +42,6 @@
 #include <unistd.h>
 #include <stdio.h>
 
-#include "bom.h"
-
 #if __STDC_VERSION__ >= 199901L
 /* restrict is a keyword */
 #else
@@ -141,14 +139,11 @@ ssize_t getdelim(char **restrict lineptr, size_t *restrict n, int delimiter,
 		return -1;
 	}
 	*pos = '\0';
-	struct BOM t = builtin__BOM_get(*lineptr);
-	if (t.is_BOM == true && line == 1) {
+	if (line == 1) {
 		assert(line == 1);
 		*lineptr += 3;
 		bytes -= 3;
-		builtin__BOM_print(t);
 	}
-	builtin__BOM_free(t);
 	return bytes;
 }
 
